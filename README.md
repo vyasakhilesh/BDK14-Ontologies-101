@@ -49,6 +49,13 @@ robot convert --input chromosome-parts.owl --format ttl --output chromosome-part
 # Extract subset of an ontology - Upper part Ontology of chromosome having id GO:0005694
 # id is extracted using protege
 robot extract --method MIREOT --input chromosome-parts.owl --lower-term GO:0005694 --output chromosome-full.owl
+
+# Extraction between lower (chromosome id GO:0005694) and upper part (organelle id GO:0043226)
+robot extract --method MIREOT \
+  --input chromosome-parts.owl \
+  --lower-term GO:0005694 \
+  --upper-term GO:0043226 \
+  --output chromosome.owl
 ```
 
 
