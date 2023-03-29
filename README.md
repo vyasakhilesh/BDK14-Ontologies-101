@@ -21,7 +21,6 @@ At the completion of this component, the learner will be able to:
 
 **Exercise:**
 [Ontology 101 Tutorial](http://ontology101tutorial.readthedocs.io/en/latest/)
-
 Folders:
 - basic-classification
 - basic-disjoint
@@ -30,6 +29,28 @@ Folders:
 - basic-subclass
 - domain-range
 - taxon-union
+
+## [Robot Tutorial](https://oboacademy.github.io/obook/tutorial/robot-tutorial-1/)
+
+**How to run using docker**
+```bash
+# Install docker
+# Note: Execute this command only once
+docker pull obolibrary/robot
+# Set working directory and run bash
+docker run -v $PWD/:/work -w /work --rm -ti obolibrary/robot bash
+# check robot version
+robot --version
+
+# convert owl file into ttl
+cd /work/BDK14_exercises/basic-subclass
+robot convert --input chromosome-parts.owl --format ttl --output chromosome-parts.ttl
+
+# Extract subset of an ontology
+robot extract --method MIREOT --input chromosome-parts.owl --lower-term GO:0005694 --output chromosome-full.owl
+```
+
+
 
 **Recommended readings:**
 [BDK14_exercises/BDK14_RecommendedReadings.pdf](https://github.com/OHSUBD2K/BDK14-Ontologies-101/blob/master/BDK14_exercises/BDK14_RecommendedReadings.pdf)
