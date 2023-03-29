@@ -46,7 +46,8 @@ robot --version
 cd /work/BDK14_exercises/basic-subclass
 robot convert --input chromosome-parts.owl --format ttl --output chromosome-parts.ttl
 
-# Extract subset of an ontology
+# Extract subset of an ontology - Upper part Ontology of chromosome having id GO:0005694
+# id is extracted using protege
 robot extract --method MIREOT --input chromosome-parts.owl --lower-term GO:0005694 --output chromosome-full.owl
 ```
 
