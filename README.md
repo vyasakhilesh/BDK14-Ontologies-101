@@ -76,7 +76,7 @@ robot annotate --input animals2.owl \
   --output animals2_ann.owl
 
 # Adding Version IRI
-robot annotate --input animals_ann_ver.owl \
+robot annotate --input animals_ann.owl \
   --version-iri http://example.com/animals/2023-03-30/animals.owl \
   --output animals_ann_ver.owl
 ```
