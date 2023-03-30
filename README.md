@@ -56,6 +56,29 @@ robot extract --method MIREOT \
   --lower-term GO:0005694 \
   --upper-term GO:0043226 \
   --output chromosome.owl
+
+# convert spreadsheet into OWL ontologies using template strings
+robot template --template animals.tsv --output animals.owl
+
+# Convert spreadsheet and getting reference with previous one
+robot template --input animals.owl --template animals2.tsv --output animals2.owl
+
+# Note:  Protege Importing an ontology without an IRI into another ontology without an IRI can cause some problems
+
+# Annotating animal ontology with ontology-IRI
+robot annotate --input animals.owl \
+  --ontology-iri http://example.com/animals.owl \
+  --output animals_ann.owl
+
+# Annotating animal ontology with ontology-IRI
+robot annotate --input animals2.owl \
+  --ontology-iri http://example.com/animals2.owl \
+  --output animals2_ann.owl
+
+# Adding Version IRI
+robot annotate --input animals_ann_ver.owl \
+  --version-iri http://example.com/animals/2023-03-30/animals.owl \
+  --output animals_ann_ver.owl
 ```
 
 
