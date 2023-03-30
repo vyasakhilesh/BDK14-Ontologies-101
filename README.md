@@ -70,7 +70,6 @@ robot annotate --input animals.owl \
   --ontology-iri http://example.com/animals.owl \
   --output animals_ann.owl
 
-# Annotating animal ontology with ontology-IRI
 robot annotate --input animals2.owl \
   --ontology-iri http://example.com/animals2.owl \
   --output animals2_ann.owl
@@ -80,12 +79,32 @@ robot annotate --input animals_ann.owl \
   --version-iri http://example.com/animals/2023-03-30/animals.owl \
   --output animals_ann_ver.owl
 
+robot annotate --input animals2_ann.owl \
+  --version-iri http://example.com/animals/2023-03-30/animals2.owl \
+  --output animals2_ann_ver.owl
+
 # Adding more metadata title, description and license to ontology
 robot annotate --input animals_ann_ver.owl \
   --annotation dc11:title "Animal Ontology" \
   --annotation dc11:description "An ontology about animals" \
   --link-annotation dc:license https://creativecommons.org/licenses/by/4.0/ \
   --output animals_ann_ver_meta.owl
+
+robot annotate --input animals2_ann_ver.owl \
+  --annotation dc11:title "Animal Ontology" \
+  --annotation dc11:description "An ontology about animals" \
+  --link-annotation dc:license https://creativecommons.org/licenses/by/4.0/ \
+  --output animals2_ann_ver_meta.owl
+
+# Merging two separate files or merging all imports into current ontology file
+cp animals_ann_ver_meta.owl animals-new.owl
+cp animals2_ann_ver_meta.owl animals2-new.owl
+robot merge --input animals.owl --input animals-new.owl --output animals-full.owl
+
+robot merge --input animals2.owl --collapse-import-closure true --output animals-full-2.owl
+
+# Note: animals-full.owl and animals-full-2.owl should same
+
 ```
 
 
