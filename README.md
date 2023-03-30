@@ -79,6 +79,13 @@ robot annotate --input animals2.owl \
 robot annotate --input animals_ann.owl \
   --version-iri http://example.com/animals/2023-03-30/animals.owl \
   --output animals_ann_ver.owl
+
+# Adding more metadata title, description and license to ontology
+robot annotate --input animals_ann_ver.owl \
+  --annotation dc11:title "Animal Ontology" \
+  --annotation dc11:description "An ontology about animals" \
+  --link-annotation dc:license https://creativecommons.org/licenses/by/4.0/ \
+  --output animals_ann_ver_meta.owl
 ```
 
 
