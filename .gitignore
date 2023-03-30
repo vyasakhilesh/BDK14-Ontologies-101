@@ -1,5 +1,6 @@
 #folders to not track
 node_modules
+merge
 
 #Untracked files
 Thumbs.db
@@ -16,3 +17,8 @@ chromosome-full.owl
 chromosome.owl
 *Zone.Identifier
 animals*.owl
+diff.html
+reasoned.owl
+unreasoned.owl
+unsatisfiable.owl
+catalog-v001.xml

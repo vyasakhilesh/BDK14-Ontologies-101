@@ -101,10 +101,31 @@ cp animals_ann_ver_meta.owl animals-new.owl
 cp animals2_ann_ver_meta.owl animals2-new.owl
 robot merge --input animals.owl --input animals-new.owl --output animals-full.owl
 
-robot merge --input animals2.owl --collapse-import-closure true --output animals-full-2.owl
+robot merge --input animals2-new.owl --collapse-import-closure true --output animals-full-2.owl
 
 # Note: animals-full.owl and animals-full-2.owl should same
 
+# Reason
+cd ../basic-classification
+cp ubiq-ligase-complex.owl unreasoned.owl
+# Note: Edit and save unreasoned.owl using below steps in Protege
+# 1. Find 'organelle' in the class hierarchy below 'cellular_component' (or just search for it by label)
+# 2. Make 'organelle' disjoint with 'organelle part' (either use the class hierarchy or type it in the expression editor)
+# 3. Find 'intracellular organelle part' below 'intracellular part' or 'organelle part' (or search for it by label)
+# 4. Add 'organelle' as a parent class to 'intracellular organelle part' (remember that you only need to include the single quotes if the label has spaces)
+robot reason --input unreasoned.owl --reasoner ELK --output unsatisfiable.owl
+# In final output only upper terms of class 'intracellular organelle part' is included - asserted as owl:Nothing
+
+# Reason on orginal file
+robot reason --input ubiq-ligase-complex.owl --output reasoned.owl
+
+# Diff - formats - plain, pretty, html, markdown
+robot diff --left ubiq-ligase-complex.owl \
+  --right reasoned.owl \
+  --format html \
+  --output diff.html
+
+# Quality Control with Robot --Todo
 ```
 
 
