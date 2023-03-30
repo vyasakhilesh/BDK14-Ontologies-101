@@ -17,6 +17,7 @@ chromosome-full.owl
 chromosome.owl
 *Zone.Identifier
 animals*.owl
+animals*.ttl
 diff.html
 reasoned.owl
 unreasoned.owl
