@@ -1,0 +1,26 @@
+id: cato
+title: "Cat Anatomy Ontology"
+github_org: vyasakhilesh
+git_main_branch: master
+repo: BDK14-Ontologies-101
+release_artefacts:
+  - base
+  - full
+  - simple
+primary_release: full
+export_formats:
+  - owl
+  - obo
+  - json
+import_group:
+  products:
+    - id: ro
+    - id: pato
+    - id: omo
+robot_java_args: "-Xmx8G"
+robot_report:
+  use_labels: TRUE
+  fail_on: ERROR
+  custom_profile: TRUE
+  report_on:
+    - edit
