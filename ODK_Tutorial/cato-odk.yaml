@@ -1,8 +1,8 @@
 id: cato
 title: "Cat Anatomy Ontology"
 github_org: vyasakhilesh
-git_main_branch: master
-repo: BDK14-Ontologies-101
+git_main_branch: main
+repo: odk_sample_repo
 release_artefacts:
   - base
   - full

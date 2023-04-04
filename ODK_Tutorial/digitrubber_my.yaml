@@ -1,0 +1,33 @@
+id: digitrubber
+title: "DigitRubber Ontology"
+github_org: vyasakhilesh
+repo: digitrubber
+documentation:
+  documentation_system: mkdocs
+# report_fail_on none or error
+report_fail_on: Error
+# namespaces: 
+#  - http://purl.obolibrary.org/obo/BTO_
+# Todo: license: CC-BY 4.0
+# Todo description
+description: "DigitRubber Ontology"
+export_formats:
+  - owl
+  - obo
+  - json
+release_artefacts:
+  - base
+  - full
+  - simple
+primary_release: full
+release_date: True
+reasoner: ELK
+edit_format: owl
+import_group:
+  annotation_properties:
+  - rdfs:label
+  - IAO:0000115
+robot_java_args: '-Xmx8G'
+robot_opts: -vv
+# allow_equivalents can be all or asserted-only
+allow_equivalents: asserted-only

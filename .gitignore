@@ -1,6 +1,7 @@
 #folders to not track
 node_modules
 merge
+target
 
 #Untracked files
 Thumbs.db

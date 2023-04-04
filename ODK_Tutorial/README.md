@@ -2,6 +2,7 @@
 
 ### Setting up ODK in Linux
 ```bash
+# One time Step
 docker pull obolibrary/odkfull
 
 # check robot version
@@ -27,9 +28,9 @@ Download [Cato-odl.yaml](https://github.com/INCATools/ontology-development-kit/t
 ### [Generate Repo]
 ```bash
 cd ODK_Tutorial
-sh seed-via-docker.sh -c -C cato-odk.yaml
+sh seed-via-docker.sh -c -C cato-odk.yaml --outdir ../../odk_sample_repo
 
-# follow the instruction in the end of the command
+# repo will be created under follow the instruction in the end of the command
 ```
 
 
