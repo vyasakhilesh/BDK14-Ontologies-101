@@ -2,6 +2,7 @@ id: digitrubber
 title: "DigitRubber Ontology"
 github_org: vyasakhilesh
 repo: digitrubber
+git_main_branch: main
 documentation:
   documentation_system: mkdocs
 # report_fail_on none or error
@@ -25,8 +26,28 @@ reasoner: ELK
 edit_format: owl
 import_group:
   annotation_properties:
-  - rdfs:label
-  - IAO:0000115
+    - rdfs:label
+    - IAO:0000115
+  products:
+    - id: po
+    - id: ro
+    - id: pato
+robot_report:
+  use_labels: True
+  fail_on: ERROR
+  custom_profile: True
+  report_on:
+    - edit
+use_templates: True
+use_context: True
+components:
+  use_template: True
+  products:
+    - filename: digitrubber_terms.owl
+      use_template: True
+      template_options: --add-prefixes config/context.json
+      templates:
+        - digitrubber_terms.tsv 
 robot_java_args: '-Xmx8G'
 robot_opts: -vv
 # allow_equivalents can be all or asserted-only
