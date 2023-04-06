@@ -29,6 +29,8 @@ Download [Cato-odl.yaml](https://github.com/INCATools/ontology-development-kit/t
 ```bash
 cd ODK_Tutorial
 sh seed-via-docker.sh -c -C cato-odk.yaml --outdir ../../odk_sample_repo
+sudo chown -R <usrname> target
+sudo chmod -R 775 target
 
 # repo will be created under follow the instruction in the end of the command
 

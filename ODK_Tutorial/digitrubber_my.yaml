@@ -21,7 +21,7 @@ release_artefacts:
   - full
   - simple
 primary_release: full
-release_date: True
+release_date: true
 reasoner: ELK
 edit_format: owl
 import_group:
@@ -33,21 +33,13 @@ import_group:
     - id: ro
     - id: pato
 robot_report:
-  use_labels: True
+  use_labels: true
   fail_on: ERROR
-  custom_profile: True
+  custom_profile: true
   report_on:
     - edit
-use_templates: True
-use_context: True
-components:
-  use_template: True
-  products:
-    - filename: digitrubber_terms.owl
-      use_template: True
-      template_options: --add-prefixes config/context.json
-      templates:
-        - digitrubber_terms.tsv 
+use_templates: true
+use_context: true
 robot_java_args: '-Xmx8G'
 robot_opts: -vv
 # allow_equivalents can be all or asserted-only
